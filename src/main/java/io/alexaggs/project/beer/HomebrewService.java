@@ -11,27 +11,27 @@ import org.springframework.stereotype.Service;
 public class HomebrewService {
 	
 	@Autowired
-	HomebrewRepository topicRepository;
+	HomebrewRepository repository;
 	
-	public List<HomebrewBeer> getAllTopics() {
-		List<HomebrewBeer> topics = new ArrayList<HomebrewBeer>();
-		topicRepository.findAll().forEach(topics::add);
-		return topics;
+	public List<HomebrewBeer> getAllBeers() {
+		List<HomebrewBeer> beers = new ArrayList<HomebrewBeer>();
+		repository.findAll().forEach(beers::add);
+		return beers;
 	}
 	
-	public HomebrewBeer getTopic(String id) {
-		return topicRepository.findOne(id);
+	public HomebrewBeer getBeer(String id) {
+		return repository.findOne(id);
 	}
 	
-	public void addTopic(HomebrewBeer topic) {
-		topicRepository.save(topic);
+	public void addBeer(HomebrewBeer beer) {
+		repository.save(beer);
 	}
 	
-	public void updateTopic(HomebrewBeer topic, String id) {
-		topicRepository.save(topic);
+	public void updateBeer(HomebrewBeer beer, String id) {
+		repository.save(beer);
 	}
 	
-	public void deleteTopic(String id) {
-		topicRepository.delete(getTopic(id));
+	public void deleteBeer(String id) {
+		repository.delete(getBeer(id));
 	}
 }

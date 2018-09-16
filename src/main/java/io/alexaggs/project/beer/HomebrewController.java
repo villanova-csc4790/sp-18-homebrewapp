@@ -16,28 +16,28 @@ public class HomebrewController {
 	@Autowired
 	private HomebrewService topService;
 
-	@RequestMapping("/topics")
-	public List<HomebrewBeer> getAllTopics() {
-		return topService.getAllTopics();
+	@RequestMapping("/homebrews")
+	public List<HomebrewBeer> getAllBeers() {
+		return topService.getAllBeers();
 	}
 	
-	@RequestMapping("/topics/{id}")
-	public HomebrewBeer getTopic(@PathVariable String id) {
-		return topService.getTopic(id);
+	@RequestMapping("/homebrews/{id}")
+	public HomebrewBeer getBeer(@PathVariable String id) {
+		return topService.getBeer(id);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value="/topics")
-	public void addTopic(@RequestBody HomebrewBeer topic) {
-		topService.addTopic(topic);
+	@RequestMapping(method = RequestMethod.POST, value="/homebrews")
+	public void addBeer(@RequestBody HomebrewBeer beer) {
+		topService.addBeer(beer);
 	}
 	
-	@RequestMapping(method = RequestMethod.PUT, value="/topics/{id}")
-	public void updateTopic(@RequestBody HomebrewBeer topic, @PathVariable String id) {
-		topService.updateTopic(topic, id);
+	@RequestMapping(method = RequestMethod.PUT, value="/homebrews/{id}")
+	public void updateBeer(@RequestBody HomebrewBeer beer, @PathVariable String id) {
+		topService.updateBeer(beer, id);
 	}
 	
-	@RequestMapping(method = RequestMethod.DELETE, value="/topics/{id}")
-	public void deleteTopic(@PathVariable String id) {
-		topService.deleteTopic(id);
+	@RequestMapping(method = RequestMethod.DELETE, value="/homebrews/{id}")
+	public void deleteBeer(@PathVariable String id) {
+		topService.deleteBeer(id);
 	}
 }

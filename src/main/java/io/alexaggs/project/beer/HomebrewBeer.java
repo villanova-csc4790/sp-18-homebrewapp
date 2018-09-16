@@ -18,6 +18,7 @@ public class HomebrewBeer {
     private Boolean usedOnlineRecipe;
     private double abv, originalGravity, finalGravity, specificGravity;
 
+    public HomebrewBeer() {}
 
     public HomebrewBeer(String beerId, String beerStyle, Boolean usedOnlineRecipe, String description,
                         double abv, double originalGravity, double finalGravity, double specificGravity) {
