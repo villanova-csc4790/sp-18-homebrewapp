@@ -14,30 +14,30 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomebrewController {
 	
 	@Autowired
-	private HomebrewService topService;
+	private HomebrewService hbService;
 
 	@RequestMapping("/homebrews")
 	public List<HomebrewBeer> getAllBeers() {
-		return topService.getAllBeers();
+		return hbService.getAllBeers();
 	}
 	
 	@RequestMapping("/homebrews/{id}")
 	public HomebrewBeer getBeer(@PathVariable String id) {
-		return topService.getBeer(id);
+		return hbService.getBeer(id);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="/homebrews")
 	public void addBeer(@RequestBody HomebrewBeer beer) {
-		topService.addBeer(beer);
+		hbService.addBeer(beer);
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT, value="/homebrews/{id}")
 	public void updateBeer(@RequestBody HomebrewBeer beer, @PathVariable String id) {
-		topService.updateBeer(beer, id);
+		hbService.updateBeer(beer, id);
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE, value="/homebrews/{id}")
 	public void deleteBeer(@PathVariable String id) {
-		topService.deleteBeer(id);
+		hbService.deleteBeer(id);
 	}
 }
