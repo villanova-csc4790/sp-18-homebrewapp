@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './Homebrews.css';
 
 interface Homebrews {
   beerId: string
@@ -46,16 +47,19 @@ class Homebrews extends React.Component<HomebrewsProps, HomebrewsState> {
     }
 
     return (
-      <div>
+      <div className="Brew-Data">
         <h2>Homebrew List</h2>
         {beers.map((beer: Homebrews) =>
-          <div key={beer.beerId}>
+        <div key={beer.beerId} className="Square">
+          <div key={beer.beerId} className="Data">
+            <h2>h</h2>
             {beer.beerStyle} <br/>
             {beer.description} <br/>
             {beer.abv} <br/>
             {beer.originalGravity} <br/>
             {beer.finalGravity} <br/> <br/>
           </div>
+        </div>
         )}
       </div>
     );
