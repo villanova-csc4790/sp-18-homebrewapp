@@ -22,7 +22,7 @@ public class HomebrewService {
 	public HomebrewBeer getBeer(String id) {
 		return repository.findOne(id);
 	}
-	
+
 	public void addBeer(HomebrewBeer beer) {
 		repository.save(beer);
 	}
