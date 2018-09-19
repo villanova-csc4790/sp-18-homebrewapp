@@ -3,6 +3,7 @@ import './Homebrews.css';
 
 interface Homebrews {
   beerId: string
+  beerName: string
   beerStyle: string
   description: string
   usedOnlineRecipe: boolean
@@ -52,12 +53,12 @@ class Homebrews extends React.Component<HomebrewsProps, HomebrewsState> {
         {beers.map((beer: Homebrews) =>
         <div key={beer.beerId} className="Square">
           <div key={beer.beerId} className="Data">
-            <h2>h</h2>
-            {beer.beerStyle} <br/>
-            {beer.description} <br/>
-            {beer.abv} <br/>
-            {beer.originalGravity} <br/>
-            {beer.finalGravity} <br/> <br/>
+            <h2>{beer.beerName}</h2>
+            Beer Style: {beer.beerStyle} <br/>
+            ABV: {beer.abv}% <br/>
+            Original Gravity: {beer.originalGravity} <br/>
+            Final Gravity: {beer.finalGravity} <br/>
+            Description: {beer.description} <br/> <br/>
           </div>
         </div>
         )}

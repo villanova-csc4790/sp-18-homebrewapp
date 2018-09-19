@@ -13,6 +13,7 @@ public class HomebrewBeer {
 
     @Id
     private String beerId;
+    private String beerName;
     private String beerStyle;
     private String description;
     private Boolean usedOnlineRecipe;
@@ -20,10 +21,11 @@ public class HomebrewBeer {
 
     public HomebrewBeer() {}
 
-    public HomebrewBeer(String beerId, String beerStyle, Boolean usedOnlineRecipe, String description,
+    public HomebrewBeer(String beerId, String beerName, String beerStyle, Boolean usedOnlineRecipe, String description,
                         double abv, double originalGravity, double finalGravity, double specificGravity) {
 
         this.beerId = beerId;
+        this.beerName = beerName;
         this.beerStyle = beerStyle;
         this.usedOnlineRecipe = usedOnlineRecipe;
         this.description = description;
@@ -36,6 +38,8 @@ public class HomebrewBeer {
     public void setBeerId(String beerId) {
         this.beerId = beerId;
     }
+
+    public void setBeerName(String beerName) { this.beerName = beerName; };
 
     public void setBeerStyle(String beerStyle) {
         this.beerStyle = beerStyle;
@@ -68,6 +72,8 @@ public class HomebrewBeer {
     public String getBeerId() {
         return beerId;
     }
+
+    public String getBeerName() { return beerName; };
 
     public String getBeerStyle() {
         return beerStyle;
