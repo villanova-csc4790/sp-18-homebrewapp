@@ -2,7 +2,6 @@ package io.alexaggs.project.beer;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 /*
  * Homebrewed beer entity class

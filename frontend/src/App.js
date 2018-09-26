@@ -1,12 +1,12 @@
-import * as React from 'react';
+import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
 import Homebrews from './Homebrews';
-
 import Beer from './Beer.svg';
 
 class App extends React.Component {
 
-  public render() {
+  render() {
     return (
       <div className="App">
         <header className="App-header">
