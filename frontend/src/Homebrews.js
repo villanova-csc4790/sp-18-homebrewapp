@@ -26,7 +26,7 @@ class Homebrews extends React.Component{
 
   async remove(beerId) {
   console.log(beerId);
-      await fetch('api/homebrews/3', {
+      await fetch('http://localhost:8082/api/homebrews/' + beerId, {
         method: 'DELETE',
         mode: 'cors',
         headers: {
@@ -48,7 +48,13 @@ class Homebrews extends React.Component{
 
     return (
       <div className="Brew-Data">
-        <h2>Homebrew List</h2>
+
+      <Container fluid>
+        <div className = "AddHomebrew">
+            <Button color="success">Add Homebrew</Button>
+        </div>
+      </Container>
+
         {beers.map((beer: Homebrews) =>
         <div key={beer.id} className="Square">
           <div key={beer.id} className="Data">
