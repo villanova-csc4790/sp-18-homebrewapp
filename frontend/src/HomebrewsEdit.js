@@ -3,10 +3,13 @@ import { Link, withRouter } from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 import './HomebrewsEdit.css';
 
+//TODO: Add some backend validation check for this
+let idCount = 0;
+
 class HomebrewsEdit extends Component {
 
   emptyBeer = {
-    beerId: 3,
+    beerId: idCount++,
     beerName: '',
     beerStyle: '',
     description: '',
@@ -60,7 +63,6 @@ class HomebrewsEdit extends Component {
   render() {
     const {item} = this.state;
     const title = <h2>{item.beerId ? 'Edit Homebrew' : 'Add Homebrew'}</h2>;
-
     return <div>
       <Container>
         {title}
@@ -91,18 +93,18 @@ class HomebrewsEdit extends Component {
                    onChange={this.handleChange} autoComplete="ABV..."/>
           </FormGroup>
           <FormGroup>
-            <Label for="og" className="BeerLabels">Original Gravity</Label>
-            <Input type="number" name="og" id="og" value={item.originalGravity || ''}
+            <Label for="originalGravity" className="BeerLabels">Original Gravity</Label>
+            <Input type="number" name="originalGravity" id="originalGravity" value={item.originalGravity || ''}
                    onChange={this.handleChange} autoComplete="Original Gravity..."/>
           </FormGroup>
           <FormGroup>
-            <Label for="fg" className="BeerLabels">Final Gravity</Label>
-            <Input type="number" name="fg" id="fg" value={item.finalGravity || ''}
+            <Label for="finalGravity" className="BeerLabels">Final Gravity</Label>
+            <Input type="number" name="finalGravity" id="finalGravity" value={item.finalGravity || ''}
                    onChange={this.handleChange} autoComplete="Final Gravity..."/>
           </FormGroup>
           <FormGroup>
-            <Label for="sg" className="BeerLabels">Specific Gravity</Label>
-            <Input type="number" name="sg" id="sg" value={item.specificGravity || ''}
+            <Label for="specificGravity" className="BeerLabels">Specific Gravity</Label>
+            <Input type="number" name="specificGravity" id="specificGravity" value={item.specificGravity || ''}
                    onChange={this.handleChange} autoComplete="Specific Gravity..."/>
           </FormGroup>
           <FormGroup>
