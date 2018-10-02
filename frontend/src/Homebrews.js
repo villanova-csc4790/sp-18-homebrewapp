@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './Homebrews.css';
-import axios from 'axios';
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class Homebrews extends React.Component{
 
@@ -51,7 +51,7 @@ class Homebrews extends React.Component{
 
       <Container fluid>
         <div className = "AddHomebrew">
-            <Button color="success">Add Homebrew</Button>
+            <Button color="success" tag={Link} to="/homebrews/new">Add Homebrew</Button>
         </div>
       </Container>
 

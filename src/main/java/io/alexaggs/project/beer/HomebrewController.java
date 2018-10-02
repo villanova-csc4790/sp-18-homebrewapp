@@ -19,20 +19,19 @@ public class HomebrewController {
 	}
 
 	@RequestMapping("/homebrews/{id}")
-	@CrossOrigin(origins = "http://localhost:3000")
 	public HomebrewBeer getBeer(@PathVariable String id) {
 		System.out.println("GET");
 		return hbService.getBeer(id);
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value="/homebrews")
+	@CrossOrigin(origins = "http://localhost:3000")
 	public void addBeer(@RequestBody HomebrewBeer beer) {
 		System.out.println("POST");
 		hbService.addBeer(beer);
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, value="/homebrews/{id}")
-	@CrossOrigin(origins = "http://localhost:3000")
 	public void updateBeer(@RequestBody HomebrewBeer beer, @PathVariable String id) {
 		System.out.println("Put");
 		hbService.updateBeer(beer, id);
