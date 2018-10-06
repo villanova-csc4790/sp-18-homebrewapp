@@ -69,12 +69,13 @@ class HomebrewsEdit extends Component {
         <Form onSubmit={this.handleSubmit}>
           <FormGroup>
             <Label for="beerId" className="BeerLabels">Beer Id</Label>
-            <Input type="text" name="beerId" id="beerId" value={item.beerId || ''}
+            <Label className = "BeerLabels" onChange={this.handleChange}>{item.beerId}</Label>
+            <Label type="text" name="beerId" id="beerId" value={item.beerId || ''}
                    onChange={this.handleChange} autoComplete="The Name..."/>
           </FormGroup>
           <FormGroup>
             <Label for="beerName" className="BeerLabels">Beer Name</Label>
-            <Input type="text" name="beerName" id="beerame" value={item.beerName || ''}
+            <Input type="text" name="beerName" id="beerame"
                    onChange={this.handleChange} autoComplete="The Name..."/>
           </FormGroup>
           <FormGroup>

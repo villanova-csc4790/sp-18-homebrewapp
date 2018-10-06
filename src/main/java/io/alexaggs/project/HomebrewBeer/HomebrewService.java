@@ -1,4 +1,4 @@
-package io.alexaggs.project.beer;
+package io.alexaggs.project.HomebrewBeer;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,10 +1,10 @@
-package io.alexaggs.project.beer;
+package io.alexaggs.project.HomebrewBeer;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /*
- * Homebrewed beer entity class
+ * Homebrewed HomebrewBeer entity class
  */
 
 @Entity
