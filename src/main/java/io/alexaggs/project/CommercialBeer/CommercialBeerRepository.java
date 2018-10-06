@@ -1,4 +1,4 @@
 package io.alexaggs.project.CommercialBeer;
 
-public class CommercialBeerRepository {
+public interface CommercialBeerRepository {
 }
