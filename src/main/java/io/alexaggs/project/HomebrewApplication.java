@@ -13,6 +13,11 @@ public class HomebrewApplication {
 
 	public static void main (String args[]) throws Exception {
 		//SpringApplication.run(HomebrewApplication.class, args);
-		CommercialBeerScraper.getTopBeers();
+		ArrayList<CommercialBeer> beers = CommercialBeerScraper.getTopBeers();
+
+		for(CommercialBeer b: beers) {
+			System.out.println(CommercialBeerScraper.getBeerData(
+					"https://www.beeradvocate.com" + b.getUrl()));
+		}
 	}
 }

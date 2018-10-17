@@ -12,13 +12,13 @@ public class CommercialBeerScraper {
         ArrayList<CommercialBeer> topBeers = new ArrayList<CommercialBeer>();
         int index = 0;
         final Document doc = Jsoup.connect("https://www.beeradvocate.com/lists/top/").get();
-        for(Element row: doc.select("table td")) {
+        for (Element row : doc.select("table td")) {
             String title = row.select("a b").text();
-            if(!title.equals("")) {
+            if (!title.equals("")) {
                 topBeers.add(new CommercialBeer(title, ""));
             }
         }
-        for(Element row: doc.select("table td a")) {
+        for (Element row : doc.select("table td a")) {
             String url = row.attr("href");
             if (url.length() > 20 && !(url.length() > 50)) {
                 topBeers.get(index).setUrl(url);
@@ -31,10 +31,19 @@ public class CommercialBeerScraper {
     public static ArrayList<String> getBeerData(String url) throws Exception {
         ArrayList<String> beerInfo = new ArrayList<String>();
         Document doc = Jsoup.connect(url).get();
-        for(Element row: doc.select("div#info_box")) {
+        for (Element row : doc.select("div#info_box")) {
             String info = row.select("a b").text();
             String text = row.ownText();
-            String abv = text.substring(2, 8);
+            /* I have it at 13 because that should be large enough to obtain the abv % for
+             * every beer. Each abv entry will have some arbitrary text but I am just going
+             * to filter that out.
+             */
+            String abv = text.substring(0, 8);
+            abv = abv.replace(',', ' ');
+            if(!abv.contains("%")) {
+                abv = "No Listed ABV";
+            }
+            System.out.println(abv);
             beerInfo.add(info);
             beerInfo.add(abv);
         }
