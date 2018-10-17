@@ -34,10 +34,6 @@ public class CommercialBeerScraper {
         for (Element row : doc.select("div#info_box")) {
             String info = row.select("a b").text();
             String text = row.ownText();
-            /* I have it at 13 because that should be large enough to obtain the abv % for
-             * every beer. Each abv entry will have some arbitrary text but I am just going
-             * to filter that out.
-             */
             String abv = text.substring(0, 8);
             abv = abv.replace(',', ' ');
             if(!abv.contains("%")) {
