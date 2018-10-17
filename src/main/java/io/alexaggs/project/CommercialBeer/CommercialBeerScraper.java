@@ -19,11 +19,9 @@ public class CommercialBeerScraper {
             }
         }
         for(Element row: doc.select("table td a")) {
-            while(index < topBeers.size()) {
-                String url = row.attr("href");
-                if (url.length() > 20) {
-                    topBeers.get(index).setUrl(url);
-                }
+            String url = row.attr("href");
+            if (url.length() > 20 && !(url.length() > 50)) {
+                topBeers.get(index).setUrl(url);
                 index++;
             }
         }
