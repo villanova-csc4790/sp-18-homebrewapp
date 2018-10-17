@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HomebrewApplication {
 
 	public static void main (String args[]) throws Exception {
-		SpringApplication.run(HomebrewApplication.class, args);
+		//SpringApplication.run(HomebrewApplication.class, args);
+		System.out.println(CommercialBeerScraper.getTopBeers());
 	}
 }
