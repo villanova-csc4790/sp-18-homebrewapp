@@ -11,33 +11,32 @@ public class CommercialBeerScraper {
     public static ArrayList<CommercialBeer> getTopBeers() throws Exception {
         ArrayList<CommercialBeer> topBeers = new ArrayList<CommercialBeer>();
         int index = 0;
-        String title = "", url = "";
+        String title = "", url = "", name = "";
         final Document doc = Jsoup.connect("https://www.beeradvocate.com/lists/top/").get();
-        /*
-         * Accessing the name & style of each top beer
-         */
-        for (Element row : doc.select("table td")) {
-            title = row.select("a b").text();
-            if (!title.equals("")) {
-                topBeers.add(new CommercialBeer(title, ""));
-            }
+
+        //Gets the name of each beer
+        for(Element row: doc.select("table td")) {
+            name = row.select("b").text();
+            if(name.length() > 8)
+                topBeers.add(new CommercialBeer(name, "", "", ""));
+
         }
 
-        /*
-         * Accessing beer profile url extension for each top beer
-         */
+        //Gets the url for each beer profile
         for (Element row : doc.select("table td a")) {
             url = row.attr("href");
-            if (url.length() > 20 && !(url.length() > 50)) {
+            if (url.length() > 20 && !(url.length() > 50) && index < 206) {
                 topBeers.get(index).setUrl(url);
                 index++;
             }
         }
+
         return topBeers;
     }
 
     public static ArrayList<String> getBeerData(String url) throws Exception {
         ArrayList<String> beerInfo = new ArrayList<String>();
+        int index = 0;
         String info = "", text = "", abv = "";
         Document doc = Jsoup.connect(url).get();
         for (Element row : doc.select("div#info_box")) {
@@ -45,7 +44,7 @@ public class CommercialBeerScraper {
             text = row.ownText();
             abv = text.substring(0, 8);
             abv = abv.replace(',', ' ');
-            if(!abv.contains("%")) {
+            if (!abv.contains("%")) {
                 abv = "No Listed ABV";
             }
             beerInfo.add(info);
