@@ -34,6 +34,32 @@ public class CommercialBeerScraper {
         return topBeers;
     }
 
+    public static ArrayList<CommercialBeer> getTopBeersByStyle(String beerStyle) throws Exception {
+        ArrayList<CommercialBeer> topBeers = new ArrayList<CommercialBeer>();
+        int index = 0;
+        String title = "", url = "", name = "";
+        final Document doc = Jsoup.connect("https://www.beeradvocate.com/lists/style/" + beerStyle).get();
+        //Gets the name of each beer
+        for(Element row: doc.select("table td")) {
+            name = row.select("b").text();
+            if(name.length() > 8)
+                topBeers.add(new CommercialBeer(name, "", "", ""));
+
+        }
+
+        index = 0;
+        //Gets the url for each beer profile
+        for (Element row : doc.select("table td a")) {
+            url = row.attr("href");
+            if (url.length() > 20 && !(url.length() > 50) && index < topBeers.size()) {
+                topBeers.get(index).setUrl(url);
+                index++;
+            }
+        }
+
+        return topBeers;
+    }
+
     public static ArrayList<String> getBeerData(String url) throws Exception {
         ArrayList<String> beerInfo = new ArrayList<String>();
         int index = 0;

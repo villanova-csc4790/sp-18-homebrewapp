@@ -17,8 +17,8 @@ class App extends React.Component {
         </header>
         <Router>
             <Switch>
-                <Route path='/' exact={true} component={Homebrews}/>
                 <Route path='/homebrews' exact={true} component={Homebrews}/>
+                <Route path='/homebrews/:beerId' exact={true} component={HomebrewsEdit}/>
                 <Route path='/homebrews/new' component={HomebrewsEdit}/>
             </Switch>
         </Router>

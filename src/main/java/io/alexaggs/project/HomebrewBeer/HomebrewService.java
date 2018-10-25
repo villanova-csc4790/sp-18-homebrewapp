@@ -11,6 +11,9 @@ public class HomebrewService {
 	
 	@Autowired
 	HomebrewRepository repository;
+
+	private int idCount = 0;
+	private String count = "";
 	
 	public List<HomebrewBeer> getAllBeers() {
 		List<HomebrewBeer> beers = new ArrayList<HomebrewBeer>();
@@ -23,6 +26,9 @@ public class HomebrewService {
 	}
 
 	public void addBeer(HomebrewBeer beer) {
+		count = String.valueOf(idCount);
+		idCount++;
+		beer.setBeerId(count);
 		repository.save(beer);
 	}
 	
@@ -31,6 +37,7 @@ public class HomebrewService {
 	}
 	
 	public void deleteBeer(String id) {
+		idCount--;
 		repository.delete(getBeer(id));
 	}
 }

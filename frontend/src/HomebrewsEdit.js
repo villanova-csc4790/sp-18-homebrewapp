@@ -9,7 +9,7 @@ let idCount = 0;
 class HomebrewsEdit extends Component {
 
   emptyBeer = {
-    beerId: idCount++,
+    beerId: '',
     beerName: '',
     beerStyle: '',
     description: '',
@@ -30,10 +30,10 @@ class HomebrewsEdit extends Component {
   }
 
 //  async componentDidMount() {
-//    if (this.props.match.params.beerId !== 'new') {
-//      const beer = await fetch(`/api/homebrews/${this.props.match.params.id}`);
-//      this.setState({item: beer});
-//    }
+//    fetch('http://localhost:8082/api/homebrews/' + this.emptyBeer.beerId)
+//          .then(response => response.json())
+//          .then(data => this.setState({beers: data, isLoading: false}));
+//          console.log(this.props.match.params.id);
 //  }
 
   handleChange(event) {
@@ -50,11 +50,12 @@ class HomebrewsEdit extends Component {
     event.preventDefault();
     const {item} = this.state;
     await fetch('http://localhost:8082/api/homebrews', {
-      method: 'POST',
+      method: (item.beerId) ? 'PUT' : 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
+      mode: 'cors',
       body: JSON.stringify(item),
     });
     this.props.history.push('/homebrews');
@@ -65,12 +66,12 @@ class HomebrewsEdit extends Component {
     const title = <h2>{item.beerId ? 'Edit Homebrew' : 'Add Homebrew'}</h2>;
     return <div>
       <Container>
-        {title}
+       {title}
         <Form onSubmit={this.handleSubmit}>
           <FormGroup>
             <Label for="beerId" className="BeerLabels">Beer Id</Label>
             <Label className = "BeerLabels" onChange={this.handleChange}>{item.beerId}</Label>
-            <Label type="text" name="beerId" id="beerId" value={item.beerId || ''}
+            <Label type="number" name="beerId" id="beerId" value={item.beerId || ''}
                    onChange={this.handleChange} autoComplete="The Name..."/>
           </FormGroup>
           <FormGroup>

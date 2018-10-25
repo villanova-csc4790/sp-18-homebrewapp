@@ -13,19 +13,20 @@ public class HomebrewApplication {
 
 	public static void main (String args[]) throws Exception {
 		SpringApplication.run(HomebrewApplication.class, args);
-//		ArrayList<CommercialBeer> beers = CommercialBeerScraper.getTopBeers();
-//		ArrayList<String> beerInfo;
-//		for(int i = 0; i < 10; i++) {
-//			beerInfo = CommercialBeerScraper.getBeerData("https://www.beeradvocate.com" + beers.get(i).getUrl());
-//			beers.get(i).setCompany(beerInfo.get(0));
-//			beers.get(i).setAbv(beerInfo.get(1));
-//		}
-//
-//		for(int i = 0; i < 10; i++) {
-//			System.out.println("Name " + beers.get(i).getName());
-//			System.out.println("Company " + beers.get(i).getCompany());
-//			System.out.println("ABV " + beers.get(i).getAbv());
-//			System.out.println();
-//		}
+		System.out.println();
+		ArrayList<CommercialBeer> beers = CommercialBeerScraper.getTopBeersByStyle("116");
+		ArrayList<String> beerInfo;
+		for(int i = 0; i < 10; i++) {
+			beerInfo = CommercialBeerScraper.getBeerData("https://www.beeradvocate.com" + beers.get(i).getUrl());
+			beers.get(i).setCompany(beerInfo.get(0));
+			beers.get(i).setAbv(beerInfo.get(1));
+		}
+
+		for(int i = 0; i < 10; i++) {
+			System.out.println("Name " + beers.get(i).getName());
+			System.out.println("Company " + beers.get(i).getCompany());
+			System.out.println("ABV " + beers.get(i).getAbv());
+			System.out.println();
+		}
 	}
 }

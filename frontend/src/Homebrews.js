@@ -25,7 +25,6 @@ class Homebrews extends React.Component{
   }
 
   async remove(beerId) {
-  console.log(beerId);
       await fetch('http://localhost:8082/api/homebrews/' + beerId, {
         method: 'DELETE',
         mode: 'cors',
@@ -59,13 +58,14 @@ class Homebrews extends React.Component{
         <div key={beer.id} className="Square">
           <div key={beer.id} className="Data">
             <h2>{beer.beerName}</h2>
+            {beer.beerId} <br/>
             Beer Style: {beer.beerStyle} <br/>
             ABV: {beer.abv}% <br/>
             Original Gravity: {beer.originalGravity} <br/>
             Final Gravity: {beer.finalGravity} <br/>
             Description: {beer.description} <br/> <br/>
             <Button size="sm" color="danger" onClick={() => this.remove(beer.beerId)}>Delete</Button>
-
+            <Button size="sm" color="primary" tag={Link} to={"/homebrews/" + beer.beerId}>Edit</Button>
           </div>
         </div>
         )}
