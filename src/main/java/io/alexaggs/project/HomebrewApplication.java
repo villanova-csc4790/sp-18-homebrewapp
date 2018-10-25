@@ -11,14 +11,20 @@ import java.util.ArrayList;
 @SpringBootApplication
 public class HomebrewApplication {
 
-	public static void main (String args[]) throws Exception {
+	private static final String IPA_VALUE = "116";
+	private static final String PILSNER_VALUE = "164";
 
-		final String IPA_VALUE = "116";
-		final String PILSNER_VALUE = "164";
+	public static void main (String args[]) throws Exception {
 
 		//SpringApplication.run(HomebrewApplication.class, args);
 		System.out.println();
 
+		printTopBeers();
+		printTopIpas();
+		printTopPilsners();
+	}
+
+	public static void printTopBeers() throws Exception {
 		System.out.println("------------TOP OVERALL BEERS------------");
 
 		ArrayList<CommercialBeer> topBeers = CommercialBeerScraper.getTopBeersByStyle("116");
@@ -35,7 +41,9 @@ public class HomebrewApplication {
 			System.out.println("ABV: " + topBeers.get(i).getAbv());
 			System.out.println();
 		}
+	}
 
+	public static void printTopIpas() throws Exception {
 		System.out.println("------------TOP IPAS------------");
 		ArrayList<CommercialBeer> topIpas = CommercialBeerScraper.getTopBeersByStyle(IPA_VALUE);
 		ArrayList<String> ipaInfo;
@@ -51,12 +59,14 @@ public class HomebrewApplication {
 			System.out.println("ABV: " + topIpas.get(i).getAbv());
 			System.out.println();
 		}
+	}
 
+	public static void printTopPilsners() throws Exception {
 		System.out.println("------------TOP PILSNERS------------");
 		ArrayList<CommercialBeer> topPilsners = CommercialBeerScraper.getTopBeersByStyle(PILSNER_VALUE);
 		ArrayList<String> pilsnerInfo;
 		for(int i = 0; i < 10; i++) {
-			pilsnerInfo = CommercialBeerScraper.getBeerData("https://www.beeradvocate.com" + topIpas.get(i).getUrl());
+			pilsnerInfo = CommercialBeerScraper.getBeerData("https://www.beeradvocate.com" + topPilsners.get(i).getUrl());
 			topPilsners.get(i).setCompany(pilsnerInfo.get(0));
 			topPilsners.get(i).setAbv(pilsnerInfo.get(1));
 		}
