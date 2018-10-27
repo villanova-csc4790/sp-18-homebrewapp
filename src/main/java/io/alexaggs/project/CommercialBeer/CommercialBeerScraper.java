@@ -25,7 +25,7 @@ public class CommercialBeerScraper {
         //Gets the url for each beer profile
         for (Element row : doc.select("table td a")) {
             url = row.attr("href");
-            if (url.length() > 20 && !(url.length() > 50) && index < 206) {
+            if (url.length() > 20 && !(url.length() > 50) && index < topBeers.size()) {
                 topBeers.get(index).setUrl(url);
                 index++;
             }

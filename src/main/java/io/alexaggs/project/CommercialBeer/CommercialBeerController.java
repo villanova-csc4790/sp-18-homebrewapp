@@ -15,6 +15,7 @@ public class CommercialBeerController {
     private CommercialBeerService cbService;
 
     @RequestMapping("/Commercials")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<CommercialBeer> getAllBeers() {
         return cbService.getAllBeers();
     }
@@ -26,9 +27,12 @@ public class CommercialBeerController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/Commercials")
-    public void addBeer(@RequestBody CommercialBeer beer) {
+    public void addBeer(@RequestBody CommercialBeer beer) throws Exception {
         System.out.println("POST");
-        cbService.addBeer(beer);
+        ArrayList<CommercialBeer> topBeers = CommercialBeerScraper.getTopBeers();
+        for(int i = 0; i < 10; i++) {
+            cbService.addBeer(topBeers.get(i));
+        }
     }
 
     @RequestMapping(method = RequestMethod.PUT, value="/Commercials/{id}")
