@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import './CommercialBeers.css';
 
 class CommercialBeers extends React.Component{
 
@@ -33,11 +34,17 @@ class CommercialBeers extends React.Component{
     return (
       <div className="Brew-Data">
         {beers.map((beer: CommercialBeers) =>
-        <div key={beer.cbId} className="Square">
-          <div key={beer.cbId} className="Data">
-            <h2>{beer.name}</h2>
-            ABV: {beer.abv}% <br/>
-            Company: {beer.company} <br/>
+        <div key={beer.cbId}>
+          <div key={beer.cbId}>
+          <Table>
+           <thead>
+            <tr className="Specific">
+             <th> <h2>{beer.name}</h2> </th>
+             <th> Company: {beer.company} <br/> </th>
+             <th> ABV: {beer.abv}% <br/> </th>
+            </tr>
+           </thead>
+          </Table>
           </div>
         </div>
         )}
