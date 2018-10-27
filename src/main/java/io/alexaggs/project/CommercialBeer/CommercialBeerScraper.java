@@ -18,7 +18,7 @@ public class CommercialBeerScraper {
         for(Element row: doc.select("table td")) {
             name = row.select("b").text();
             if(name.length() > 8)
-                topBeers.add(new CommercialBeer(name, "", "", ""));
+                topBeers.add(new CommercialBeer("", name, "", "", ""));
 
         }
 
@@ -34,7 +34,7 @@ public class CommercialBeerScraper {
         return topBeers;
     }
 
-    public static ArrayList<CommercialBeer> getTopBeersByStyle(String beerStyle) throws Exception {
+    public static ArrayList<CommercialBeer> getTopBeers(String beerStyle) throws Exception {
         ArrayList<CommercialBeer> topBeers = new ArrayList<CommercialBeer>();
         int index = 0;
         String title = "", url = "", name = "";
@@ -43,7 +43,7 @@ public class CommercialBeerScraper {
         for(Element row: doc.select("table td")) {
             name = row.select("b").text();
             if(name.length() > 8)
-                topBeers.add(new CommercialBeer(name, "", "", ""));
+                topBeers.add(new CommercialBeer("", name, "", "", ""));
 
         }
 

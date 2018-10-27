@@ -30,10 +30,10 @@ class HomebrewsEdit extends Component {
   }
 
 //  async componentDidMount() {
-//    fetch('http://localhost:8082/api/homebrews/' + this.emptyBeer.beerId)
-//          .then(response => response.json())
-//          .then(data => this.setState({beers: data, isLoading: false}));
-//          console.log(this.props.match.params.id);
+//    if (this.props.match.params.beerId !== 'new') {
+//          const beer = await (await fetch(`/api/homebrews/${this.props.match.params.beerId}`)).json();
+//          this.setState({item: beer});
+//        }
 //  }
 
   handleChange(event) {

@@ -16,18 +16,17 @@ public class HomebrewApplication {
 
 	public static void main (String args[]) throws Exception {
 
-		//SpringApplication.run(HomebrewApplication.class, args);
-		System.out.println();
-
-		printTopBeers();
-		printTopIpas();
-		printTopPilsners();
+		SpringApplication.run(HomebrewApplication.class, args);
+//		System.out.println();
+//		printTopBeers();
+//		printTopIpas();
+//		printTopPilsners();
 	}
 
 	public static void printTopBeers() throws Exception {
 		System.out.println("------------TOP OVERALL BEERS------------");
 
-		ArrayList<CommercialBeer> topBeers = CommercialBeerScraper.getTopBeersByStyle("116");
+		ArrayList<CommercialBeer> topBeers = CommercialBeerScraper.getTopBeers();
 		ArrayList<String> beerInfo;
 		for(int i = 0; i < 10; i++) {
 			beerInfo = CommercialBeerScraper.getBeerData("https://www.beeradvocate.com" + topBeers.get(i).getUrl());
@@ -45,7 +44,7 @@ public class HomebrewApplication {
 
 	public static void printTopIpas() throws Exception {
 		System.out.println("------------TOP IPAS------------");
-		ArrayList<CommercialBeer> topIpas = CommercialBeerScraper.getTopBeersByStyle(IPA_VALUE);
+		ArrayList<CommercialBeer> topIpas = CommercialBeerScraper.getTopBeers(IPA_VALUE);
 		ArrayList<String> ipaInfo;
 		for(int i = 0; i < 10; i++) {
 			ipaInfo = CommercialBeerScraper.getBeerData("https://www.beeradvocate.com" + topIpas.get(i).getUrl());
@@ -63,7 +62,7 @@ public class HomebrewApplication {
 
 	public static void printTopPilsners() throws Exception {
 		System.out.println("------------TOP PILSNERS------------");
-		ArrayList<CommercialBeer> topPilsners = CommercialBeerScraper.getTopBeersByStyle(PILSNER_VALUE);
+		ArrayList<CommercialBeer> topPilsners = CommercialBeerScraper.getTopBeers(PILSNER_VALUE);
 		ArrayList<String> pilsnerInfo;
 		for(int i = 0; i < 10; i++) {
 			pilsnerInfo = CommercialBeerScraper.getBeerData("https://www.beeradvocate.com" + topPilsners.get(i).getUrl());
