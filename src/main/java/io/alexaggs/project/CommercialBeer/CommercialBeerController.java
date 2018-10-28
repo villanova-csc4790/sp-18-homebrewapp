@@ -30,7 +30,11 @@ public class CommercialBeerController {
     public void addBeer(@RequestBody CommercialBeer beer) throws Exception {
         System.out.println("POST");
         ArrayList<CommercialBeer> topBeers = CommercialBeerScraper.getTopBeers();
+        ArrayList<String> beerInfo;
         for(int i = 0; i < 10; i++) {
+            beerInfo = CommercialBeerScraper.getBeerData("https://www.beeradvocate.com" + topBeers.get(i).getUrl());
+            topBeers.get(i).setCompany(beerInfo.get(0));
+            topBeers.get(i).setAbv(beerInfo.get(1));
             cbService.addBeer(topBeers.get(i));
         }
     }
