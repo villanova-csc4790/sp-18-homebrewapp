@@ -15,8 +15,10 @@ public class NearbyBreweries {
     private static final String API_KEY_GEO = "geo key";
 
     public static void findPlaces() throws InterruptedException, ApiException, IOException {
-        double lat = getCoordinates("Villanova").lat;
-        double lng = getCoordinates("Villanova").lng;
+
+        LatLng coordinates = getCoordinates("Villanova");
+        double lat = coordinates.lat;
+        double lng = coordinates.lng;
 
         LatLng location = new LatLng(lat, lng);
 
