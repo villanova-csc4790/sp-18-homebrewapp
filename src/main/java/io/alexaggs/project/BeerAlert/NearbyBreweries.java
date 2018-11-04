@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class NearbyBreweries {
 
-    private static final String API_KEY = "AIzaSyD9Fs6gvBbIq-Bf9iAP3lNUMsJhJsRSn9I";
+    private static final String API_KEY = "MY KEY";
 
     public static void findPlaces() throws InterruptedException, ApiException, IOException {
         LatLng location = new LatLng(40.023026, -75.315178);
