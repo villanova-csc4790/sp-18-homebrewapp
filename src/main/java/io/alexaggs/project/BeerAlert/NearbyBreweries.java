@@ -1,24 +1,27 @@
 package io.alexaggs.project.BeerAlert;
 
 import com.google.maps.GeoApiContext;
+import com.google.maps.GeocodingApi;
+import com.google.maps.GeocodingApiRequest;
 import com.google.maps.PlacesApi;
 import com.google.maps.errors.ApiException;
-import com.google.maps.model.LatLng;
-import com.google.maps.model.PlaceType;
-import com.google.maps.model.PlacesSearchResponse;
-import com.google.maps.model.PlacesSearchResult;
+import com.google.maps.model.*;
 
 import java.io.IOException;
 
 public class NearbyBreweries {
 
-    private static final String API_KEY = "MY KEY";
+    private static final String API_KEY_PLACES = "places key";
+    private static final String API_KEY_GEO = "geo key";
 
     public static void findPlaces() throws InterruptedException, ApiException, IOException {
-        LatLng location = new LatLng(40.023026, -75.315178);
+        double lat = getCoordinates("Villanova").lat;
+        double lng = getCoordinates("Villanova").lng;
+
+        LatLng location = new LatLng(lat, lng);
 
         GeoApiContext context = new GeoApiContext.Builder()
-                .apiKey(API_KEY)
+                .apiKey(API_KEY_PLACES)
                 .build();
 
         PlacesSearchResponse response = PlacesApi.nearbySearchQuery(context, location)
@@ -32,5 +35,15 @@ public class NearbyBreweries {
         for(PlacesSearchResult p: places) {
             System.out.println(p.name);
         }
+    }
+
+    public static LatLng getCoordinates(String city) throws InterruptedException, ApiException, IOException {
+        GeoApiContext context = new GeoApiContext.Builder()
+                .apiKey(API_KEY_GEO)
+                .build();
+
+        GeocodingApiRequest result =  GeocodingApi.geocode(context, city);
+        GeocodingResult[] finalResults = result.await();
+        return finalResults[0].geometry.location;
     }
 }
