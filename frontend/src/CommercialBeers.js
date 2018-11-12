@@ -5,15 +5,38 @@ import './CommercialBeers.css';
 
 class CommercialBeers extends React.Component{
 
+    emptyBeer = {
+        cbId: '',
+        name: '',
+        company: '',
+        url: '',
+        abv: '',
+      };
+
   constructor(props) {
     super(props);
 
     this.state = {
       beers: [],
-      isLoading: false
+      isLoading: false,
+      item: this.emptyBeer
     };
-
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  async handleSubmit(event) {
+      event.preventDefault();
+      const {item} = this.state;
+      await fetch('http://localhost:8082/api/Commercials', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        mode: 'cors',
+        body: JSON.stringify(item),
+      });
+    }
 
   componentDidMount() {
     this.setState({isLoading: true});
@@ -33,6 +56,7 @@ class CommercialBeers extends React.Component{
 
     return (
       <div className="Brew-Data">
+      <Button color="secondary" onClick= {this.handleSubmit}>Get Beers</Button>
         {beers.map((beer: CommercialBeers) =>
         <div key={beer.cbId}>
           <div key={beer.cbId}>

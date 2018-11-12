@@ -16,6 +16,6 @@ public class HomebrewApplication {
 	public static void main (String args[]) throws Exception {
 
 		SpringApplication.run(HomebrewApplication.class, args);
-		BeerMailService.sendEmail();
+		//BeerMailService.sendEmail();
 	}
 }
