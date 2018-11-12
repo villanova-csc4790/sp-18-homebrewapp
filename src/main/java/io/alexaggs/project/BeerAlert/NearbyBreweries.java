@@ -11,11 +11,10 @@ import java.io.IOException;
 
 public class NearbyBreweries {
 
-    private static final String API_KEY_PLACES = "places key";
-    private static final String API_KEY_GEO = "geo key";
+    private static final String API_KEY_PLACES = "key";
+    private static final String API_KEY_GEO = "key";
 
-    public static void findPlaces() throws InterruptedException, ApiException, IOException {
-
+    public static PlacesSearchResult[] findPlaces() throws InterruptedException, ApiException, IOException {
         LatLng coordinates = getCoordinates("Villanova");
         double lat = coordinates.lat;
         double lng = coordinates.lng;
@@ -33,10 +32,7 @@ public class NearbyBreweries {
                 .keyword("brew")
                 .await();
 
-        PlacesSearchResult[] places = response.results;
-        for(PlacesSearchResult p: places) {
-            System.out.println(p.name);
-        }
+        return response.results;
     }
 
     public static LatLng getCoordinates(String city) throws InterruptedException, ApiException, IOException {
