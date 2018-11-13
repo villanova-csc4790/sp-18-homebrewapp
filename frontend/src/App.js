@@ -6,6 +6,7 @@ import CommercialBeers from './CommercialBeers';
 import Beer from './Beer.svg';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomebrewsEdit from './HomebrewsEdit';
+import Breweries from './Breweries';
 
 class App extends React.Component {
 
@@ -22,6 +23,7 @@ class App extends React.Component {
                 <Route path='/Commercials' exact={true} component={CommercialBeers}/>
                 <Route path='/homebrews/:beerId' exact={true} component={HomebrewsEdit}/>
                 <Route path='/homebrews/new' component={HomebrewsEdit}/>
+                <Route path='/Breweries' component={Breweries}/>
             </Switch>
         </Router>
       </div>
