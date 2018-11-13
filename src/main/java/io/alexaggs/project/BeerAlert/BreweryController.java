@@ -1,6 +1,5 @@
 package io.alexaggs.project.BeerAlert;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.google.maps.model.PlacesSearchResult;
@@ -12,38 +11,38 @@ import org.springframework.web.bind.annotation.*;
 public class BreweryController {
 
     @Autowired
-    private io.alexaggs.project.Brewery.BreweryService cbService;
+    private io.alexaggs.project.Brewery.BreweryService brewService;
 
     @RequestMapping("/Breweries")
     @CrossOrigin(origins = "http://localhost:3000")
     public List<Brewery> getAllBeers() {
-        return cbService.getAllBeers();
+        return brewService.getAllBeers();
     }
 
     @RequestMapping("/Breweries/{id}")
     public Brewery getBeer(@PathVariable String id) {
         System.out.println("GET");
-        return cbService.getBrewery(id);
+        return brewService.getBrewery(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/Breweries")
     public void addBeer(@RequestBody Brewery b) throws Exception {
-        PlacesSearchResult[] places = NearbyBreweries.findPlaces();
+        PlacesSearchResult[] places = NearbyBreweries.findPlaces("Villanova");
         for(PlacesSearchResult p: places) {
             b.setName(p.name);
-            cbService.addBrewery(b);
+            brewService.addBrewery(b);
         }
     }
 
     @RequestMapping(method = RequestMethod.PUT, value="/Breweries/{id}")
     public void updateBeer(@RequestBody Brewery beer, @PathVariable String id) {
         System.out.println("Put");
-        cbService.updateBrewery(beer, id);
+        brewService.updateBrewery(beer, id);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value="/Breweries/{id}")
     public void deleteBeer(@PathVariable String id) {
         System.out.println("Delete");
-        cbService.deleteBrewery(id);
+        brewService.deleteBrewery(id);
     }
 }
