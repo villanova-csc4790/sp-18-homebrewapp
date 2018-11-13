@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class BreweryController {
 
     @Autowired
-    private io.alexaggs.project.Brewery.BreweryService brewService;
+    BreweryService brewService;
 
     @RequestMapping("/Breweries")
     @CrossOrigin(origins = "http://localhost:3000")
@@ -30,6 +30,7 @@ public class BreweryController {
         PlacesSearchResult[] places = NearbyBreweries.findPlaces("Villanova");
         for(PlacesSearchResult p: places) {
             b.setName(p.name);
+            b.setLatLng(p.geometry.location);
             brewService.addBrewery(b);
         }
     }

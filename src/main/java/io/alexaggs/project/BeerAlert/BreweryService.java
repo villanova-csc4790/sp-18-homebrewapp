@@ -1,10 +1,8 @@
-package io.alexaggs.project.Brewery;
+package io.alexaggs.project.BeerAlert;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import io.alexaggs.project.BeerAlert.Brewery;
-import io.alexaggs.project.BeerAlert.BreweryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

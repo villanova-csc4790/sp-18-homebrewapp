@@ -7,6 +7,7 @@ class Breweries extends React.Component{
     emptyBrewery = {
         id: '',
         name: '',
+        LatLng: '',
       };
 
   constructor(props) {
