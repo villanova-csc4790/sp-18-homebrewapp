@@ -28,18 +28,16 @@ public class BreweryController {
 
     @RequestMapping(method = RequestMethod.POST, value="/Breweries")
     public void addBeer(@RequestBody Brewery b) throws Exception {
-        PlacesSearchResult[] places = NearbyBreweries.findPlaces("Villanova");
+        PlacesSearchResult[] places = NearbyBreweries.findPlaces(CityController.n, CityController.r);
+        System.out.println(CityController.n);
         List<Brewery> brew = getAllBeers();
-        List<String> names = new ArrayList<String>();
         for(Brewery br: brew) {
-            names.add(br.getName());
+            deleteBeer(br.getId());
         }
         for(PlacesSearchResult p: places) {
-            if(!names.contains(p.name)) {
-                b.setName(p.name);
-                b.setLatLng(p.geometry.location);
-                brewService.addBrewery(b);
-            }
+            b.setName(p.name);
+            b.setLatLng(p.geometry.location);
+            brewService.addBrewery(b);
         }
     }
 

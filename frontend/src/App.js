@@ -7,6 +7,7 @@ import Beer from './Beer.svg';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomebrewsEdit from './HomebrewsEdit';
 import Breweries from './Breweries';
+import City from './City';
 
 class App extends React.Component {
 
@@ -24,6 +25,7 @@ class App extends React.Component {
                 <Route path='/homebrews/:beerId' exact={true} component={HomebrewsEdit}/>
                 <Route path='/homebrews/new' component={HomebrewsEdit}/>
                 <Route path='/Breweries' component={Breweries}/>
+                <Route path='/City' component={City}/>
             </Switch>
         </Router>
       </div>
