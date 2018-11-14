@@ -1,8 +1,11 @@
 package io.alexaggs.project.BeerAlert;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.maps.errors.ApiException;
+import com.google.maps.model.LatLng;
 import com.google.maps.model.PlacesSearchResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +40,7 @@ public class BreweryController {
         for(PlacesSearchResult p: places) {
             b.setName(p.name);
             b.setLatLng(p.geometry.location);
+            b.setMilesFromCity(NearbyBreweries.getDistance(NearbyBreweries.getCoordinates(CityController.n), b.getLocation()));
             brewService.addBrewery(b);
         }
     }

@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67ed87d3-7481-4a9a-983a-060adb6caf2f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/frontend/src/Breweries.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Breweries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Homebrews.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Homebrews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/Brewery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/BreweryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/BreweryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/BreweryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/BreweryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/NearbyBreweries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/NearbyBreweries.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,8 +47,8 @@
           <entry key="css" value="13" />
           <entry key="gitignore" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="86" />
-          <entry key="js" value="31" />
+          <entry key="java" value="87" />
+          <entry key="js" value="32" />
           <entry key="json" value="4" />
           <entry key="log" value="1" />
           <entry key="md" value="1" />
@@ -60,9 +65,9 @@
           <entry key="CSS" value="13" />
           <entry key="Eclipse" value="2" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="86" />
+          <entry key="JAVA" value="87" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="31" />
+          <entry key="JavaScript" value="32" />
           <entry key="PLAIN_TEXT" value="11" />
           <entry key="Properties" value="7" />
           <entry key="SVG" value="2" />
@@ -73,8 +78,8 @@
         <counts>
           <entry key="css" value="592" />
           <entry key="dummy" value="7" />
-          <entry key="java" value="11606" />
-          <entry key="js" value="4557" />
+          <entry key="java" value="13849" />
+          <entry key="js" value="4581" />
           <entry key="json" value="15" />
           <entry key="properties" value="303" />
           <entry key="tsx" value="2009" />
@@ -84,9 +89,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="592" />
-          <entry key="JAVA" value="11606" />
+          <entry key="JAVA" value="13849" />
           <entry key="JSON" value="15" />
-          <entry key="JavaScript" value="4557" />
+          <entry key="JavaScript" value="4581" />
           <entry key="PLAIN_TEXT" value="2016" />
           <entry key="Properties" value="303" />
           <entry key="XML" value="124" />
@@ -113,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/BreweryService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="448">
+              <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,11 +130,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/NearbyBreweries.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+            <state relative-caret-position="204">
+              <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/Homebrews.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1071">
+              <caret line="63" column="58" lean-forward="true" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -139,15 +153,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="387">
               <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/HomebrewsEdit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="71" column="70" lean-forward="true" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -172,8 +177,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/Breweries.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="70" column="6" lean-forward="true" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
+            <state relative-caret-position="323">
+              <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -181,8 +186,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/BreweryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+            <state relative-caret-position="223">
+              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -191,9 +196,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/Brewery.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#816#817#0" expanded="true" />
+                <element signature="e#851#852#0" expanded="true" />
+                <element signature="e#1064#1065#0" expanded="true" />
+                <element signature="e#1086#1087#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/City.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="646">
               <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -204,15 +225,6 @@
                 <element signature="e#746#747#0" expanded="true" />
                 <element signature="e#775#776#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -229,7 +241,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Access-Control-Allow-Origin</find>
       <find>emptyItem</find>
       <find>Homebrews.css</find>
       <find>Access-Control-Allow-Origin:</find>
@@ -257,8 +268,9 @@
       <find>Commercials</find>
       <find>cbService</find>
       <find>findPlaces</find>
-      <find>HomebrewBeer</find>
       <find>Brewery</find>
+      <find>HomebrewBeer</find>
+      <find>getDistance</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -301,7 +313,6 @@
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/HomebrewBeer/HomebrewBeer.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/HomebrewBeer/HomebrewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/HomebrewBeer/HomebrewService.java" />
-        <option value="$PROJECT_DIR$/frontend/src/Homebrews.js" />
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/CommercialBeer/CommercialBeerRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/CommercialBeer/CommercialBeer.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/CommercialBeer/CommercialBeerScraper.java" />
@@ -319,16 +330,17 @@
         <option value="$PROJECT_DIR$/target/classes/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/HomebrewApplication.java" />
         <option value="$PROJECT_DIR$/frontend/src/CommercialBeers.js" />
-        <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/BreweryService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/Brewery.java" />
         <option value="$PROJECT_DIR$/frontend/src/HomebrewsEdit.js" />
-        <option value="$PROJECT_DIR$/frontend/src/Breweries.js" />
         <option value="$PROJECT_DIR$/frontend/src/App.js" />
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/CityRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/City.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/CityController.java" />
         <option value="$PROJECT_DIR$/frontend/src/City.js" />
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/CityService.java" />
+        <option value="$PROJECT_DIR$/frontend/src/Homebrews.js" />
+        <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/Brewery.java" />
+        <option value="$PROJECT_DIR$/frontend/src/Breweries.js" />
+        <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/BreweryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/BreweryController.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/NearbyBreweries.java" />
       </list>
@@ -348,11 +360,11 @@
   <component name="MavenRunner">
     <option name="jreName" value="#JAVA_INTERNAL" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1296" />
-    <option name="height" value="696" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="y" value="1" />
+    <option name="width" value="1934" />
+    <option name="height" value="1028" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -517,7 +529,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542161715730" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542168831746" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
@@ -589,10 +601,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="1" width="1934" height="1028" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15991472" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16008538" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -601,7 +613,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49959514" weight="0.32819384" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8639676" visible="true" weight="0.32819384" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8639676" visible="true" weight="0.33863637" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39963505" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -609,7 +621,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32929516" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.13603239" side_tool="true" weight="0.0" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32819384" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3272727" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -617,7 +629,7 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.008528785" />
+      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.008537887" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" />
     </layout>
   </component>
@@ -803,13 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/Homebrews.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="52" column="70" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/CommercialBeer/CommercialBeerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -841,20 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/Brewery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#785#786#0" expanded="true" />
-            <element signature="e#814#815#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -926,16 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/BreweryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/HomebrewsEdit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -943,17 +924,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/Breweries.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="70" column="6" lean-forward="true" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/City.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
           <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/CityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/City.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#746#747#0" expanded="true" />
+            <element signature="e#775#776#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -972,38 +974,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/City.java">
+    <entry file="file://$PROJECT_DIR$/frontend/src/Homebrews.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+        <state relative-caret-position="1071">
+          <caret line="63" column="58" lean-forward="true" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/Breweries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/Brewery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#597#598#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#490#491#0" expanded="true" />
-            <element signature="e#746#747#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/CityController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/BreweryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        <state relative-caret-position="448">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/BreweryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        <state relative-caret-position="223">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1012,8 +1024,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/alexaggs/project/BeerAlert/NearbyBreweries.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+        <state relative-caret-position="204">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

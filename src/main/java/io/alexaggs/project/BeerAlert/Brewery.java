@@ -12,13 +12,15 @@ public class Brewery {
     private String id;
     private String name;
     private LatLng location;
+    private double milesFromCity;
 
     public Brewery() {}
 
-    public Brewery(String id, String name, LatLng location) {
+    public Brewery(String id, String name, LatLng location, double milesFromCity) {
         this.id = id;
         this.name = name;
         this.location = location;
+        this.milesFromCity = milesFromCity;
     }
 
     public void setId(String id) {
@@ -33,11 +35,19 @@ public class Brewery {
         this.location = location;
     }
 
+    public void setMilesFromCity(double milesFromCity) {
+        this.milesFromCity = milesFromCity;
+    }
+
     public String getId() { return id; }
 
     public String getName() { return name; }
 
     public LatLng getLocation() {
         return location;
+    }
+
+    public double getMilesFromCity() {
+        return milesFromCity;
     }
 }

@@ -3,6 +3,7 @@ package io.alexaggs.project.BeerAlert;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.maps.model.LatLng;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

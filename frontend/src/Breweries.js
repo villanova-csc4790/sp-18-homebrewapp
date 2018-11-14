@@ -8,6 +8,7 @@ class Breweries extends React.Component{
         id: '',
         name: '',
         LatLng: '',
+        milesFromCity: '',
       };
 
   constructor(props) {
@@ -55,12 +56,15 @@ class Breweries extends React.Component{
       <div className="Brew-Data">
       <Button color="secondary" onClick= {this.handleSubmit}>Get Breweries</Button>
         {beers.map((beer: Breweries) =>
-        <div key={beer.cid}>
+        <div key={beer.id}>
           <div key={beer.id}>
           <Table>
            <thead>
             <tr className="Specific">
              <th> <h2>{beer.name}</h2> </th>
+            </tr>
+            <tr className="Specific">
+             <th> <h2>{beer.milesFromCity}</h2> </th>
             </tr>
            </thead>
           </Table>

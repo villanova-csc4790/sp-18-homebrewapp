@@ -65,7 +65,6 @@ class Homebrews extends React.Component{
             Final Gravity: {beer.finalGravity} <br/>
             Description: {beer.description} <br/> <br/>
             <Button size="sm" color="danger" onClick={() => this.remove(beer.beerId)}>Delete</Button>
-            <Button size="sm" color="primary" tag={Link} to={"/homebrews/" + beer.beerId}>Edit</Button>
           </div>
         </div>
         )}
