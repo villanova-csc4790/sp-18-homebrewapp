@@ -1,5 +1,6 @@
 package io.alexaggs.project.BeerAlert;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.maps.model.PlacesSearchResult;
@@ -28,10 +29,17 @@ public class BreweryController {
     @RequestMapping(method = RequestMethod.POST, value="/Breweries")
     public void addBeer(@RequestBody Brewery b) throws Exception {
         PlacesSearchResult[] places = NearbyBreweries.findPlaces("Villanova");
+        List<Brewery> brew = getAllBeers();
+        List<String> names = new ArrayList<String>();
+        for(Brewery br: brew) {
+            names.add(br.getName());
+        }
         for(PlacesSearchResult p: places) {
-            b.setName(p.name);
-            b.setLatLng(p.geometry.location);
-            brewService.addBrewery(b);
+            if(!names.contains(p.name)) {
+                b.setName(p.name);
+                b.setLatLng(p.geometry.location);
+                brewService.addBrewery(b);
+            }
         }
     }
 
