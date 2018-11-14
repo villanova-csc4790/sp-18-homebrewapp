@@ -52,6 +52,7 @@ public class NearbyBreweries {
         DistanceMatrix result = req.origins(one)
                 .destinations(two)
                 .await();
+
         return Math.round(result.rows[0].elements[0].distance.inMeters * .000621371 * 100) / 100.00;
     }
 }

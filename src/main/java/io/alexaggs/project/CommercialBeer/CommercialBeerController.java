@@ -1,6 +1,7 @@
 package io.alexaggs.project.CommercialBeer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import io.alexaggs.project.CommercialBeer.CommercialBeerScraper;
@@ -13,6 +14,8 @@ public class CommercialBeerController {
 
     @Autowired
     private CommercialBeerService cbService;
+
+    private HashMap<String, String> styles;
 
     @RequestMapping("/Commercials")
     @CrossOrigin(origins = "http://localhost:3000")
@@ -29,7 +32,18 @@ public class CommercialBeerController {
     @RequestMapping(method = RequestMethod.POST, value="/Commercials")
     public void addBeer(@RequestBody CommercialBeer beer) throws Exception {
         System.out.println("POST");
-        ArrayList<CommercialBeer> topBeers = CommercialBeerScraper.getTopBeers();
+        deleteBeers();
+        styles = CommercialBeerScraper.populate();
+        ArrayList<CommercialBeer> topBeers = new ArrayList<CommercialBeer>();
+        System.out.println(beer.getStyle());
+        if(beer.getStyle().equalsIgnoreCase("General")) {
+            System.out.println("Nooo");
+            topBeers = CommercialBeerScraper.getTopBeers();
+        }
+        else {
+            System.out.println("Ayy");
+            topBeers = CommercialBeerScraper.getTopBeers(styles.get(beer.getStyle()));
+        }
         ArrayList<String> beerInfo;
         for(int i = 0; i < 10; i++) {
             beerInfo = CommercialBeerScraper.getBeerData("https://www.beeradvocate.com" + topBeers.get(i).getUrl());
@@ -49,5 +63,11 @@ public class CommercialBeerController {
     public void deleteBeer(@PathVariable String id) {
         System.out.println("Delete");
         cbService.deleteBeer(id);
+    }
+
+    public void deleteBeers() {
+        for(CommercialBeer b: getAllBeers()) {
+            deleteBeer(b.getId());
+        }
     }
 }

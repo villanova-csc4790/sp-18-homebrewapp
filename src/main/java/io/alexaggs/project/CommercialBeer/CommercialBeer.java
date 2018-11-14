@@ -7,18 +7,20 @@ import javax.persistence.Id;
 public class CommercialBeer {
 
     @Id
-    String cbId;
-    String name, company, url;
-    String abv;
+    private String cbId;
+    private String name, company, url;
+    private String abv;
+    private String style;
 
     public CommercialBeer() {}
 
-    public CommercialBeer(String cbId, String name, String company, String url, String abv) {
+    public CommercialBeer(String cbId, String name, String company, String url, String abv, String style) {
         this.cbId = cbId;
         this.name = name;
         this.company = company;
         this.url = url;
         this.abv = abv;
+        this.style = style;
     }
 
     public void setCBId(String cbId) {
@@ -37,6 +39,10 @@ public class CommercialBeer {
 
     public void setAbv(String abv) { this.abv = abv; };
 
+    public void setStyle(String style) {
+        this.style = style;
+    }
+
     public String getId() {
         return cbId;
     }
@@ -52,4 +58,8 @@ public class CommercialBeer {
     }
 
     public String getAbv() { return abv; }
+
+    public String getStyle() {
+        return style;
+    }
 }

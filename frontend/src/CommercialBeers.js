@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, ButtonGroup, Container, Table } from 'reactstrap';
+import { Button, Container, Form, FormGroup, Input, Label, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './CommercialBeers.css';
 
@@ -11,6 +11,7 @@ class CommercialBeers extends React.Component{
         company: '',
         url: '',
         abv: '',
+        style: '',
       };
 
   constructor(props) {
@@ -21,8 +22,19 @@ class CommercialBeers extends React.Component{
       isLoading: false,
       item: this.emptyBeer
     };
+
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  handleChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        let item = {...this.state.item};
+        item[name] = value;
+        this.setState({item});
+      }
 
   async handleSubmit(event) {
       event.preventDefault();
@@ -50,13 +62,13 @@ class CommercialBeers extends React.Component{
     const {beers, isLoading} = this.state;
     console.log(beers);
 
-    if (isLoading) {
-      return <p>Loading...</p>;
-    }
-
     return (
       <div className="Brew-Data">
       <Button color="secondary" onClick= {this.handleSubmit}>Get Beers</Button>
+      <FormGroup>
+                         <Input type="text" name="style" id="style"
+                             onChange={this.handleChange} autoComplete="The Name..."/>
+                        </FormGroup>
         {beers.map((beer: CommercialBeers) =>
         <div key={beer.cbId}>
           <div key={beer.cbId}>

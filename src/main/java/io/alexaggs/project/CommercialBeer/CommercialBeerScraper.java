@@ -4,8 +4,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CommercialBeerScraper {
+
+    public static Map<String, String> beerStyles = new HashMap<String, String>();
 
     //Gets the name of the beer,
     public static ArrayList<CommercialBeer> getTopBeers() throws Exception {
@@ -18,7 +22,7 @@ public class CommercialBeerScraper {
         for(Element row: doc.select("table td")) {
             name = row.select("b").text();
             if(name.length() > 8)
-                topBeers.add(new CommercialBeer("", name, "", "", ""));
+                topBeers.add(new CommercialBeer("", name, "", "", "", ""));
 
         }
 
@@ -43,7 +47,7 @@ public class CommercialBeerScraper {
         for(Element row: doc.select("table td")) {
             name = row.select("b").text();
             if(name.length() > 8)
-                topBeers.add(new CommercialBeer("", name, "", "", ""));
+                topBeers.add(new CommercialBeer("", name, "", "", "", ""));
 
         }
 
@@ -77,5 +81,13 @@ public class CommercialBeerScraper {
             beerInfo.add(abv);
         }
         return beerInfo;
+    }
+
+    public static HashMap<String, String> populate() {
+        HashMap<String, String> temp = new HashMap<String, String>();
+        temp.put("ipa", "116");
+        temp.put("lager", "155");
+        temp.put("stout", "158");
+        return temp;
     }
 }
