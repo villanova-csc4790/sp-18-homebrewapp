@@ -2,6 +2,7 @@ package io.alexaggs.project;
 
 import io.alexaggs.project.BeerAlert.BeerMailService;
 import io.alexaggs.project.BeerAlert.NearbyBreweries;
+import io.alexaggs.project.CommercialBeer.CommercialBeerScraper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -16,6 +17,5 @@ public class HomebrewApplication {
 	public static void main (String args[]) throws Exception {
 
 		SpringApplication.run(HomebrewApplication.class, args);
-		//BeerMailService.sendEmail();
 	}
 }

@@ -11,6 +11,8 @@ public class CommercialBeerScraper {
 
     public static Map<String, String> beerStyles = new HashMap<String, String>();
 
+    public static Map<String, Double> avgAbvs = new HashMap<String, Double>();
+
     //Gets the name of the beer,
     public static ArrayList<CommercialBeer> getTopBeers() throws Exception {
         ArrayList<CommercialBeer> topBeers = new ArrayList<CommercialBeer>();
@@ -62,6 +64,24 @@ public class CommercialBeerScraper {
         }
 
         return topBeers;
+    }
+
+    public static double getAvgAbvs(String style) throws Exception {
+        int index = 0;
+        String text = "";
+        ArrayList<String> values = new ArrayList<String>();
+        final Document doc = Jsoup.connect("http://scottjanish.com/average-abv-across-all-beer-styles/").get();
+
+        for(Element row: doc.select("table tbody tr td")) {
+            text = row.select("td").text();
+            values.add(text);
+        }
+
+        for(int i = 2; i < values.size(); i+= 2) {
+            avgAbvs.put(values.get(i), Double.parseDouble(values.get(i + 1)));
+        }
+
+        return avgAbvs.get(style);
     }
 
     public static ArrayList<String> getBeerData(String url) throws Exception {

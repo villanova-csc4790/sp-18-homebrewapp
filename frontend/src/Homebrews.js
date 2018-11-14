@@ -58,7 +58,6 @@ class Homebrews extends React.Component{
         <div key={beer.id} className="Square">
           <div key={beer.id} className="Data">
             <h2>{beer.beerName}</h2>
-            {beer.beerId} <br/>
             Beer Style: {beer.beerStyle} <br/>
             ABV: {beer.abv}% <br/>
             Original Gravity: {beer.originalGravity} <br/>

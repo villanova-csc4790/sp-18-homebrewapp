@@ -37,11 +37,9 @@ public class CommercialBeerController {
         ArrayList<CommercialBeer> topBeers = new ArrayList<CommercialBeer>();
         System.out.println(beer.getStyle());
         if(beer.getStyle().equalsIgnoreCase("General")) {
-            System.out.println("Nooo");
             topBeers = CommercialBeerScraper.getTopBeers();
         }
         else {
-            System.out.println("Ayy");
             topBeers = CommercialBeerScraper.getTopBeers(styles.get(beer.getStyle()));
         }
         ArrayList<String> beerInfo;
