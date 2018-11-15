@@ -63,6 +63,8 @@ class City extends Component {
                    onChange={this.handleChange} autoComplete="The Name..."/>
           </FormGroup>
           <Button color="primary" type="submit">Save</Button>{' '}
+          <Button color="secondary" tag={Link} to="/Breweries">Breweries</Button>
+          <Button color="secondary" tag={Link} to="/Homebrews">Home</Button>
         </Form>
       </Container>
     </div>

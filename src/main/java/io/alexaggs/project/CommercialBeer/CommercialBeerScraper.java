@@ -36,7 +36,6 @@ public class CommercialBeerScraper {
                 index++;
             }
         }
-
         return topBeers;
     }
 
@@ -44,6 +43,7 @@ public class CommercialBeerScraper {
         ArrayList<CommercialBeer> topBeers = new ArrayList<CommercialBeer>();
         int index = 0;
         String title = "", url = "", name = "";
+        System.out.println(beerStyle);
         final Document doc = Jsoup.connect("https://www.beeradvocate.com/lists/style/" + beerStyle).get();
         //Gets the name of each beer
         for(Element row: doc.select("table td")) {

@@ -65,10 +65,11 @@ class CommercialBeers extends React.Component{
     return (
       <div className="Brew-Data">
       <Button color="secondary" onClick= {this.handleSubmit}>Get Beers</Button>
+      <Button color="secondary" tag={Link} to="/Homebrews">Home</Button>
       <FormGroup>
-                         <Input type="text" name="style" id="style"
-                             onChange={this.handleChange} autoComplete="The Name..."/>
-                        </FormGroup>
+          <Input type="text" name="style" id="style"
+                onChange={this.handleChange} autoComplete="The Name..."/>
+      </FormGroup>
         {beers.map((beer: CommercialBeers) =>
         <div key={beer.cbId}>
           <div key={beer.cbId}>

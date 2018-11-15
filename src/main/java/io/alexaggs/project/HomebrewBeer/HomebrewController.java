@@ -28,8 +28,13 @@ public class HomebrewController {
 
 	@RequestMapping(method = RequestMethod.POST, value="/homebrews")
 	@CrossOrigin(origins = "http://localhost:3000")
-	public void addBeer(@RequestBody HomebrewBeer beer) {
+	public void addBeer(@RequestBody HomebrewBeer beer) throws Exception {
 		System.out.println("POST");
+		try {
+			beer.setAvgAbv(CommercialBeerScraper.getAvgAbvs(beer.getBeerStyle()));
+		} catch(Exception e) {
+			beer.setAvgAbv(0.0);
+		}
 		hbService.addBeer(beer);
 	}
 

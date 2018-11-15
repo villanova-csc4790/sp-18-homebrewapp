@@ -51,6 +51,9 @@ class Homebrews extends React.Component{
       <Container fluid>
         <div className = "AddHomebrew">
             <Button color="success" tag={Link} to="/homebrews/new">Add Homebrew</Button>
+            <Button color="secondary" tag={Link} to="/Breweries">Breweries</Button>
+            <Button color="secondary" tag={Link} to="/City">City</Button>
+            <Button color="secondary" tag={Link} to="/Commercials">Commercials</Button>
         </div>
       </Container>
 
@@ -63,6 +66,7 @@ class Homebrews extends React.Component{
             Original Gravity: {beer.originalGravity} <br/>
             Final Gravity: {beer.finalGravity} <br/>
             Description: {beer.description} <br/> <br/>
+            Average Abv: {beer.avgAbv} <br/> <br/>
             <Button size="sm" color="danger" onClick={() => this.remove(beer.beerId)}>Delete</Button>
           </div>
         </div>

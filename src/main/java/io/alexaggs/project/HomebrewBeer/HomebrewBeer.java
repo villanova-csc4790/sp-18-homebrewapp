@@ -17,11 +17,12 @@ public class HomebrewBeer {
     private String description;
     private Boolean usedOnlineRecipe;
     private double abv, originalGravity, finalGravity, specificGravity;
+    private double avgAbv;
 
     public HomebrewBeer() {}
 
     public HomebrewBeer(String beerId, String beerName, String beerStyle, Boolean usedOnlineRecipe, String description,
-                        double abv, double originalGravity, double finalGravity, double specificGravity) {
+                        double abv, double originalGravity, double finalGravity, double specificGravity, double avgAbv) {
 
         this.beerId = beerId;
         this.beerName = beerName;
@@ -32,6 +33,7 @@ public class HomebrewBeer {
         this.originalGravity = originalGravity;
         this.finalGravity = finalGravity;
         this.specificGravity = specificGravity;
+        this.avgAbv = avgAbv;
     }
 
     public void setBeerId(String beerId) {
@@ -68,6 +70,10 @@ public class HomebrewBeer {
         this.specificGravity = specificGravity;
     }
 
+    public void setAvgAbv(double avgAbv) {
+        this.avgAbv = avgAbv;
+    }
+
     public String getBeerId() {
         return beerId;
     }
@@ -89,6 +95,7 @@ public class HomebrewBeer {
     public double getAbv() {
         return abv;
     }
+
     public double getOriginalGravity() {
         return originalGravity;
     }
@@ -99,5 +106,9 @@ public class HomebrewBeer {
 
     public double getSpecificGravity() {
         return specificGravity;
+    }
+
+    public double getAvgAbv() {
+        return avgAbv;
     }
 }

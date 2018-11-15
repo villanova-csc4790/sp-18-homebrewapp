@@ -15,7 +15,7 @@ public class CommercialBeerController {
     @Autowired
     private CommercialBeerService cbService;
 
-    private HashMap<String, String> styles;
+    private HashMap<String, String> styles = CommercialBeerScraper.populate();
 
     @RequestMapping("/Commercials")
     @CrossOrigin(origins = "http://localhost:3000")
@@ -33,9 +33,8 @@ public class CommercialBeerController {
     public void addBeer(@RequestBody CommercialBeer beer) throws Exception {
         System.out.println("POST");
         deleteBeers();
-        styles = CommercialBeerScraper.populate();
+        System.out.println(styles.get(beer.getStyle()));
         ArrayList<CommercialBeer> topBeers = new ArrayList<CommercialBeer>();
-        System.out.println(beer.getStyle());
         if(beer.getStyle().equalsIgnoreCase("General")) {
             topBeers = CommercialBeerScraper.getTopBeers();
         }

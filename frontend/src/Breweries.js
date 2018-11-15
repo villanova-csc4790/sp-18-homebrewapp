@@ -55,6 +55,8 @@ class Breweries extends React.Component{
     return (
       <div className="Brew-Data">
       <Button color="secondary" onClick= {this.handleSubmit}>Get Breweries</Button>
+      <Button color="secondary" tag={Link} to="/City">City</Button>
+      <Button color="secondary" tag={Link} to="/Homebrews">Home</Button>
         {beers.map((beer: Breweries) =>
         <div key={beer.id}>
           <div key={beer.id}>
@@ -62,9 +64,7 @@ class Breweries extends React.Component{
            <thead>
             <tr className="Specific">
              <th> <h2>{beer.name}</h2> </th>
-            </tr>
-            <tr className="Specific">
-             <th> <h2>{beer.milesFromCity}</h2> </th>
+             <th> <h2>{beer.milesFromCity} miles</h2> </th>
             </tr>
            </thead>
           </Table>

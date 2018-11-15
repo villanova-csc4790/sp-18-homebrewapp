@@ -17,7 +17,8 @@ class HomebrewsEdit extends Component {
     abv: '',
     originalGravity: '',
     finalGravity: '',
-    specificGravity: ''
+    specificGravity: '',
+    avgAbv: ''
   };
 
   constructor(props) {
@@ -103,11 +104,6 @@ class HomebrewsEdit extends Component {
             <Label for="finalGravity" className="BeerLabels">Final Gravity</Label>
             <Input type="number" name="finalGravity" id="finalGravity" value={item.finalGravity || ''}
                    onChange={this.handleChange} autoComplete="Final Gravity..."/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="specificGravity" className="BeerLabels">Specific Gravity</Label>
-            <Input type="number" name="specificGravity" id="specificGravity" value={item.specificGravity || ''}
-                   onChange={this.handleChange} autoComplete="Specific Gravity..."/>
           </FormGroup>
           <FormGroup>
             <Button color="primary" type="submit">Save</Button>{' '}
