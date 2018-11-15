@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import io.alexaggs.project.BeerAlert.BeerMailService;
 import io.alexaggs.project.CommercialBeer.CommercialBeerScraper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +33,7 @@ public class CommercialBeerController {
     @RequestMapping(method = RequestMethod.POST, value="/Commercials")
     public void addBeer(@RequestBody CommercialBeer beer) throws Exception {
         System.out.println("POST");
+        String beerNames = "";
         deleteBeers();
         System.out.println(styles.get(beer.getStyle()));
         ArrayList<CommercialBeer> topBeers = new ArrayList<CommercialBeer>();
@@ -44,10 +46,13 @@ public class CommercialBeerController {
         ArrayList<String> beerInfo;
         for(int i = 0; i < 10; i++) {
             beerInfo = CommercialBeerScraper.getBeerData("https://www.beeradvocate.com" + topBeers.get(i).getUrl());
+            beerNames += topBeers.get(i).getName() + "\n";
             topBeers.get(i).setCompany(beerInfo.get(0));
             topBeers.get(i).setAbv(beerInfo.get(1));
             cbService.addBeer(topBeers.get(i));
         }
+
+        BeerMailService.sendBeers(beerNames, beer.getStyle());
     }
 
     @RequestMapping(method = RequestMethod.PUT, value="/Commercials/{id}")

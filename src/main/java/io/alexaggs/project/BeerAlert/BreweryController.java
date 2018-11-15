@@ -1,11 +1,7 @@
 package io.alexaggs.project.BeerAlert;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-import com.google.maps.errors.ApiException;
-import com.google.maps.model.LatLng;
 import com.google.maps.model.PlacesSearchResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +27,7 @@ public class BreweryController {
 
     @RequestMapping(method = RequestMethod.POST, value="/Breweries")
     public void addBeer(@RequestBody Brewery b) throws Exception {
+        String breweryNames = "";
         PlacesSearchResult[] places = NearbyBreweries.findPlaces(CityController.n, CityController.r);
         System.out.println(CityController.n);
         List<Brewery> brew = getAllBeers();
@@ -38,11 +35,13 @@ public class BreweryController {
             deleteBeer(br.getId());
         }
         for(PlacesSearchResult p: places) {
+            breweryNames += p.name + "\n";
             b.setName(p.name);
             b.setLatLng(p.geometry.location);
             b.setMilesFromCity(NearbyBreweries.getDistance(NearbyBreweries.getCoordinates(CityController.n), b.getLocation()));
             brewService.addBrewery(b);
         }
+        BeerMailService.sendBreweries(breweryNames);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value="/Breweries/{id}")

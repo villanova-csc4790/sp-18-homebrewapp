@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Button, Container, Form, FormGroup, Input, Label, Table } from 'reactstrap';
+import { Button, Container, Form, FormGroup, Input, Label, Table,
+Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './CommercialBeers.css';
 
@@ -35,6 +36,10 @@ class CommercialBeers extends React.Component{
         item[name] = value;
         this.setState({item});
       }
+
+  handleChange2 = (event) => {
+      this.setState({ value2: event.target.value })
+  }
 
   async handleSubmit(event) {
       event.preventDefault();
@@ -78,7 +83,7 @@ class CommercialBeers extends React.Component{
             <tr className="Specific">
              <th> <h2>{beer.name}</h2> </th>
              <th> Company: {beer.company} <br/> </th>
-             <th> ABV: {beer.abv}% <br/> </th>
+             <th> ABV: {beer.abv} <br/> </th>
             </tr>
            </thead>
           </Table>
