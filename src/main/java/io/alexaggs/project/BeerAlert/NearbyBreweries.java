@@ -8,9 +8,9 @@ import java.io.IOException;
 
 public class NearbyBreweries {
 
-    private static final String API_KEY_PLACES = "AIzaSyD9Fs6gvBbIq-Bf9iAP3lNUMsJhJsRSn9I";
-    private static final String API_KEY_GEO = "AIzaSyA5mi_0O-26Kxn_VHSFyR1oGYNkkd3Q5Pk";
-    private static final String API_KEY_DIST = "AIzaSyCCxSAGuL203Wpv1_TLvxtwcQB7RMwZVGQ";
+    private static final String API_KEY_PLACES = "key";
+    private static final String API_KEY_GEO = "key";
+    private static final String API_KEY_DIST = "key";
 
     public static PlacesSearchResult[] findPlaces(String city, double radius) throws InterruptedException, ApiException, IOException {
         LatLng coordinates = getCoordinates(city);
