@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Button, ButtonGroup, Container, Table } from 'reactstrap';
+import { Button, ButtonGroup, ButtonToolbar, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import './Breweries.css';
 
 class Breweries extends React.Component{
 
@@ -54,17 +55,19 @@ class Breweries extends React.Component{
 
     return (
       <div className="Brew-Data">
-      <Button color="secondary" onClick= {this.handleSubmit}>Get Breweries</Button>
-      <Button color="secondary" tag={Link} to="/City">City</Button>
-      <Button color="secondary" tag={Link} to="/Homebrews">Home</Button>
+          <ButtonGroup>
+              <Button color="secondary" onClick= {this.handleSubmit}>Get Breweries</Button>
+              <Button color="secondary" tag={Link} to="/City">City</Button>
+              <Button color="secondary" tag={Link} to="/Homebrews">Home</Button>
+          </ButtonGroup>
         {beers.map((beer: Breweries) =>
         <div key={beer.id}>
           <div key={beer.id}>
           <Table>
            <thead>
             <tr className="Specific">
-             <th> <h2>{beer.name}</h2> </th>
-             <th> <h2>{beer.milesFromCity} miles</h2> </th>
+             <th width='300'> {beer.name} </th>
+             <th width='150'> {beer.milesFromCity} miles </th>
             </tr>
            </thead>
           </Table>

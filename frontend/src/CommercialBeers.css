@@ -4,17 +4,11 @@
   margin-left: 30px;
 }
 
-.CommercialTable {
-    border:none;
-    border-collapse: collapse;
-}
-
-.CommercialTable th {
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-}
-
 #label {
    float: left;
    margin-left: 70px;
+}
+
+.btn-group {
+    margin-top: 10px;
 }

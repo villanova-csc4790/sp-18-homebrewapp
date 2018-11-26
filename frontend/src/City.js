@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
+import { Button, ButtonGroup, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 
 class City extends Component {
 
@@ -62,9 +62,11 @@ class City extends Component {
             <Input type="number" name="radius" id="radius"
                    onChange={this.handleChange} autoComplete="The Name..."/>
           </FormGroup>
-          <Button color="primary" type="submit">Save</Button>{' '}
-          <Button color="secondary" tag={Link} to="/Breweries">Breweries</Button>
-          <Button color="secondary" tag={Link} to="/Homebrews">Home</Button>
+          <ButtonGroup>
+              <Button color="primary" type="submit">Save</Button>{' '}
+              <Button color="secondary" tag={Link} to="/Breweries">Breweries</Button>
+              <Button color="secondary" tag={Link} to="/Homebrews">Home</Button>
+          </ButtonGroup>
         </Form>
       </Container>
     </div>

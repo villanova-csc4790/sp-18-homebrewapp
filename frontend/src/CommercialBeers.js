@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, Container, Form, FormGroup, Input, Label, Table,
-Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+Dropdown, DropdownToggle, DropdownMenu, DropdownItem, ButtonGroup } from 'reactstrap';
 import {BootstrapTable, th} from
        'react-bootstrap-table'
 import { Link } from 'react-router-dom';
@@ -71,14 +71,16 @@ class CommercialBeers extends React.Component{
 
     return (
       <div className="Brew-Data">
-      <Button color="secondary" onClick= {this.handleSubmit}>Get Beers</Button>
-      <Button color="secondary" tag={Link} to="/Homebrews">Home</Button>
+      <ButtonGroup>
+          <Button color="secondary" onClick= {this.handleSubmit}>Get Beers</Button>
+          <Button color="secondary" tag={Link} to="/Homebrews">Home</Button>
+      </ButtonGroup>
       <br/>
       <br/>
       <h2 id="label">Beer Style</h2>
       <FormGroup>
         <div class="form-group col-lg-2">
-          <Input type="text" name="style" id="style" class="form-control"
+          <Input type="text" name="style" id="style"
                 onChange={this.handleChange} autoComplete="The Name..."/>
         </div>
       </FormGroup>
