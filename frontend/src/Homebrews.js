@@ -50,10 +50,12 @@ class Homebrews extends React.Component{
 
       <Container fluid>
         <div className = "AddHomebrew">
+        <ButtonGroup>
             <Button color="success" tag={Link} to="/homebrews/new">Add Homebrew</Button>
             <Button color="secondary" tag={Link} to="/Breweries">Breweries</Button>
             <Button color="secondary" tag={Link} to="/City">City</Button>
             <Button color="secondary" tag={Link} to="/Commercials">Commercials</Button>
+        </ButtonGroup>
         </div>
       </Container>
 
